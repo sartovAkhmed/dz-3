@@ -1,23 +1,11 @@
-import { useState } from 'react';
+import React from 'react';
 import './App.css';
+import { Tasks } from './components/Tasks';
 
 function App() {
-  const [tasks, setTask] = useState([])
-  function onClickTaskAdd() {
-    const text = prompt('plesse aded text')
-    setTask([text, ...tasks])
-  }
-
   return (
     <div className="App">
-      <h1>List tasks</h1>
-      <button onClick={onClickTaskAdd}>Добавить</button>
-      {tasks.map(task => (
-        <div>
-          <h2>{task}</h2>
-          <button>delete</button>
-        </div>
-      ))}
+      <Tasks />
     </div>
   );
 }
